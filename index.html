@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>Meyto Shrine — The Cradle of Faith in the Philippines</title>
+  <meta name="description" content="Meyto Shrine — historical and cultural heritage site in Bulacan." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Progress bar -->
+  <div id="progress-bar" aria-hidden="true"></div>
+
+  <!-- NAVBAR (fixed) -->
+  <header class="navbar" role="banner">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="Meyto Shrine home">Meyto Shrine</a>
+
+      <!-- Desktop nav -->
+      <nav id="navMenu" class="nav-menu" role="navigation" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a class="nav-link active" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#history">History</a></li>
+          <li><a class="nav-link" href="#purpose">Purpose</a></li>
+          <li><a class="nav-link" href="#perception">Perception &amp; Facts</a></li>
+          <li><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link" href="#location">Location &amp; Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile menu toggle (visible only on small screens) -->
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO / HOME -->
+  <!-- Background image is assets/MEYTO.jpg — replace that file with your own photo -->
+  <section id="home" class="hero" role="region" aria-labelledby="home-title">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner container">
+      <h1 id="home-title" class="hero-title">Meyto Shrine</h1>
+      <p class="hero-lead"><i>Reviving the Forgotten: Exploring the Historical and Cultural Significance of Meyto Shrine in Bulacan</i></p>
+      <a class="btn hero-cta" href="#history">Explore Now</a>
+    </div>
+  </section>
+
+  <!-- HISTORY (image left on desktop) -->
+  <section id="history" class="content-section reveal" aria-labelledby="history-title">
+    <div class="image">
+      <!-- put your image at assets/history.jpg -->
+      <img src="HIS.jpg" alt="Historic view of Meyto Shrine">
+    </div>
+    <div class="text" id="history-title">
+      <h2>Historical Background</h2>
+        <p><li>As the Spanish colonizers explored the islands of the Philippines, one of their strategies to take possession of the land was to introduce the idea of God’s 
+          existence—uniting the people under Christianity through Catholicism. The cross became their most powerful symbol of conversion and faith. This effort proved successful, 
+          shaping Filipino spirituality during Spain’s 333 years of colonization.</strong>
+        <p><li>The Spaniards sent Fr. Diego Vivar Ordóñez de Vivar, an Augustinian friar, to what is now Barrio Meyto, Calumpit, Bulacan, where he planted a wooden cross and 
+          held the first Catholic Mass in Bulacan in 1572. This marked the beginning of Christianity not only in Calumpit but also in neighboring provinces of Central Luzon.</p>
+        <p><li>Today, the Meyto Shrine stands as a quiet reminder of that historic event—a cross placed inside a dome-shaped gazebo, mirroring the design of Magellan’s Cross in Cebu. 
+          Often forgotten, this 453-year-old site lies in the center of Barangay Meyto, carrying with it centuries of faith and history.</p>
+      <button class="fact-toggle btn-small" onclick="toggleFact(this)" aria-expanded="false">💡 Did You Know?</button>
+      <div class="fact hidden">Meyto Shrine is said to be one of the earliest sites of Christian baptism in the Philippines!</div>
+    </div>
+  </section>
+
+  <!-- PURPOSE (image right on desktop) -->
+  <section id="purpose" class="content-section reveal" aria-labelledby="purpose-title">
+    <div class="image">
+      <img src="pic1.png" alt="Purpose of Meyto Shrine">
+    </div>
+    <div class="text" id="purpose-title">
+      <h2>Purpose Through Time</h2>
+      <p>The entirety of Meyto Shrine was built in 1994 to honor the birthplace of Christianity in Bulacan. According to its caretaker, the reconstruction was initiated by the local 
+        tourism and historical office, and the cross that now stands is a replica of the original wooden one planted by the Augustinian missionaries. The original cross has long vanished, 
+        weathered and eroded by time, and the current replica preserves the shrine’s spiritual and historical significance.</p>
+        <p>Regarded as the starting point of Christianity in Central Luzon, Meyto Shrine challenges other historical accounts claiming that the St. John the Baptist Church in Poblacion, 
+          Calumpit, marked the first establishment of Christianity in Bulacan. This humble cross by the riverbanks of Meyto bears the deeper truth of where it all began.</p>
+        <p>This is a significant piece of the religious history of the province as the country is is known for its religious beliefs. If the first mass in the Philippines is held at Limasawa, 
+          the first mass in Bulacan and the neighboring provinces is held at Barrio Meyto, Calumpit, Bulacan. It is a forgotten figure—yet it holds much significance, the government, the locals, 
+          and the community should patronize it more as we should treasure what’s ours first so that it could shine—before the latter tourist spots.</p>
+      <ul>
+        <p><strong>Downsides:</strong></p>
+        <li>Meyto Shrine holds a significant historical and cultural significance. However, the patronage of the people, overshadowing of the other historical places, gaps in documentation, weak tourism infrastructure, disconnection due to modernization
+          and the lack of directional signs supposed to be scattered around the town makes it hard for other tourists to visit the place. That caused a valuable heritage to be forgotten or neglected.</li>
+      </ul>
+      <button class="fact-toggle btn-small" onclick="toggleFact(this)" aria-expanded="false">💡 Did You Know?</button>
+      <div class="fact hidden">This is the cradle of Christianity in the province, where the first Catholic Mass was held by the Augustinian friars, armed with cross in 1572.</div>
+    </div>
+  </section>
+
+  <!-- PERCEPTION & FACTS (image left on desktop) -->
+  <section id="perception" class="content-section reveal" aria-labelledby="perception-title">
+    <div class="image">
+      <img src="PICTURE2.jpg" alt="Perception and local culture at Meyto Shrine">
+    </div>
+    <div class="text" id="perception-title">
+      <h2>Perception &amp; Facts</h2>
+      <p>In the past, the Meyto Shrine in Calumpit, Bulacan was known mostly by local residents as a holy and historical place believed to be where the first Catholic Mass in the province took place. Although 
+        it had great spiritual and cultural importance, it was not widely recognized beyond the town because of limited publicity and support from the government. The shrine also faced issues with maintenance and lacked proper facilities. Today, people’s perception of Meyto Shrine has improved as it gains more attention from both the community and local authorities. It is now being promoted as a cultural and religious heritage site, with efforts to improve its facilities, add signs, and include it in school and tourism activities. At present, the shrine is valued not only as a sacred site but also as an important historical landmark that reflects the roots of Christianity and the rich culture of Bulacan.</p>
+
+      <!-- multiple fact cards that toggle open on click -->
+      <div class="facts-grid">
+        <div class="fact-card" onclick="toggleCard(this)" role="button" tabindex="0">
+          <strong>Fact 1</strong>
+          <p class="hidden">Fr. Diego Vivar Ordonez, sent by the Spaniards, first set foot in Barrio Meyto, Calumpit Bulacan and held the first ever mass in the province, 
+            they planted a wooden cross which is the cross in Meyto Shrine</p>
+        </div>
+        <div class="fact-card" onclick="toggleCard(this)" role="button" tabindex="0">
+          <strong>Fact 2</strong>
+          <p class="hidden">the shrine (whole) was built in 1994 to commemorate the forgotten piece of history in Calmupit, 
+            it was also referenced to the Magellan's Cross in Cebu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY (leave structure as-is per your request) -->
+  <section id="gallery" class="section-gallery reveal" aria-labelledby="gallery-title">
+    <h2 id="gallery-title" class="center">Gallery</h2>
+    <div class="gallery-grid container">
+      <div class="gallery-item"><img src="1.jpg" alt="Shrine entrance" onclick="openModal(this)"></div>
+      <div class="gallery-item"><img src="22.jpg" alt="Interior view" onclick="openModal(this)"></div>
+      <div class="gallery-item"><img src="3.jpg" alt="Pathway" onclick="openModal(this)"></div>
+    </div>
+  </section>
+
+  <!-- LOCATION & CONTACT (image on right on desktop) -->
+  <section id="location" class="content-section reveal" aria-labelledby="location-title">
+    <div class="map">
+        <iframe src="https://maps.google.com/maps?q=Calumpit%20Bulacan&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+      </div>
+    <div class="text" id="location-title">
+      <h2>Location &amp; Contact</h2>
+      <p>Brgy. Meyto, Calumpit, Bulacan — accessible by road from Malolos and nearby towns. For inquiries or guided visits, contact the preservations team.</p>
+      <a class="btn" href="https://www.facebook.com/MeytoShrineItoAngSimula" id="mapLink">Visit FB Page ></a>
+      <p style="margin-top:.6rem">Email: <a href="mailto:meytoshrine@example.com">meytoshrine@example.com</a></p>
+    </div>
+  </section>
+
+  <!-- Modal for gallery images -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <div class="modal-inner">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close preview">&times;</button>
+      <img id="modal-img" alt="Expanded image">
+      <p id="modal-caption" class="modal-caption"></p>
+    </div>
+  </div>
+
+<!-- FINAL CALL TO ACTION -->
+<section id="cta" class="cta-section reveal">
+  <div class="cta-container">
+    <!-- Replace this src with your actual GIF -->
+    <img src="hype.gif" alt="Animated invitation to visit Meyto Shrine" class="cta-gif">
+
+    <h2 class="cta-text">Revisit the Forgotten</h2>
+    <p class="cta-subtext">
+      Step into the roots of faith and history — come see the timeless beauty of Meyto Shrine yourself.
+    </p>
+    <a href="#location" class="btn">Plan Your Visit</a>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Meyto Shrine Project — Aceveda, Estorgio, Marcelo, Sumabat, & Veliganilao <3 </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

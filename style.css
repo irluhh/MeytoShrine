@@ -1,0 +1,429 @@
+/* ============================
+   MEYTO SHRINE — style.css
+   Clean, safe, responsive
+   Fonts: Poppins (body) + Playfair Display (titles)
+   Palette: white, #336c5d, #c2ac80, rgba(51,108,93,0.14)
+   ============================ */
+
+/* ---------- VARIABLES ---------- */
+:root {
+  --green: #336c5d;
+  --gold: #c2ac80;
+  --soft: #89b3ab;
+  --tint: rgba(51,108,93,0.14);
+  --white: #ffffff;
+  --text: #161617;
+  --radius: 5px;
+  --container: 1200px;
+}
+
+/* ---------- RESET & BASE ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- CONTAINER ---------- */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- PROGRESS BAR ---------- */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: var(--green);
+  z-index: 1500;
+  transition: width 0.2s linear;
+}
+
+/* ============================
+   NAVBAR
+   ============================ */
+.navbar {
+  position: fixed;
+  inset: 0 0 auto 0; /* top / left / right anchored */
+  background: rgba(255,255,255,0.98);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  z-index: 1400;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 12px 20px;
+}
+
+/* Brand */
+.brand {
+  font-family: "Playfair Display", serif;
+  color: var(--green);
+  font-weight: 600;
+  font-size: 1.15rem;
+  text-decoration: none;
+}
+
+/* Desktop nav */
+.nav-menu { display:flex; align-items:center; }
+.nav-links { display:flex; gap:14px; list-style:none; margin:0; padding:0; }
+.nav-link {
+  color: var(--green);
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: color .18s, transform .12s;
+}
+.nav-link:hover { color: var(--gold); transform: translateY(-2px); }
+.nav-link.active { color: var(--gold); }
+
+/* Hamburger button (mobile only) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--green);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  height: 88vh;
+  background: url("BGG.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin-top: 0; /* nav is fixed */
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--tint); /* soft green tint as requested */
+}
+
+/* Force hero text white and readable */
+.hero-inner { position: relative; z-index: 2; padding: 2rem; max-width: 900px; }
+.hero-title, .hero-sub, .hero-lead, .hero-inner p {
+  color: var(--white);           /* force white */
+  text-shadow: 0 6px 20px rgba(0,0,0,0.35); /* helps legibility */
+}
+
+/* Heading styles */
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  margin-bottom: 1.35rem;
+  line-height: 1.05;
+}
+.hero-sub {
+  font-weight: 600;
+  color: var(--white); /* override */
+  margin-bottom: .6rem;
+}
+.hero-lead {
+  max-width: 100%;
+  margin: 0 auto 1rem;
+  color: var(--white);
+}
+
+/* Hero CTA */
+.hero-cta {
+  display:inline-block;
+  margin-top: -0.1rem;
+  background: var(--green);
+  color: var(--white);
+  padding: .65rem 1.25rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight:700;
+  transition: background .22s, transform .18s;
+}
+.hero-cta:hover {
+  background: var(--gold);
+  color: var(--text);
+  transform: translateY(-3px);
+}
+
+/* ============================
+   CONTENT SECTION (image + text)
+   Uses grid — safe alternation via .reverse utility
+   ============================ */
+.content-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  padding: 72px 0;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+/* If you want to reverse the order, add .reverse to the section */
+.content-section.reverse {
+  direction: ltr; /* keep text reading normally */
+}
+.content-section.reverse .order-image { order: 2; }
+.content-section.reverse .order-text  { order: 1; }
+
+/* Image column */
+.content-section .image { display:flex; justify-content:center; }
+.content-section .image img {
+  width:100%;
+  max-width: 520px;
+  border-radius: 10px;
+  display:block;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.content-section .image img:hover { transform: scale(1.04); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+
+/* Text column */
+.content-section .text { padding: 0 6px; }
+.content-section h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--green);
+  margin-bottom: .6rem;
+  font-size: 1.8rem;
+}
+.divider { width: 68px; height: 4px; background: var(--gold); margin-bottom: 14px; }
+.content-section p { color: var(--text); line-height: 1.7; }
+
+/* Fact toggle styles (small) */
+.fact-toggle { margin-top: 12px; display:inline-block; }
+
+/* Facts grid (perception) */
+.facts-grid { display:grid; gap:14px; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); margin-top:18px; }
+.fact-card {
+  background: rgba(71, 143, 124, 0.08);
+  padding: 12px;
+  border-radius: var(--radius);
+  cursor:pointer;
+  transition: transform .18s, box-shadow .18s;
+}
+.fact-card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(135, 247, 217, 0.08); }
+.fact-card p.hidden { display:none; }
+
+/* ============================
+   GALLERY — unchanged structure (only visuals)
+   ============================ */
+.section-gallery { padding: 70px 20px; }
+.gallery-grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); }
+.gallery-item { border-radius:10px; overflow:hidden; }
+.gallery-item img { width:100%; display:block; transition: transform .35s ease; }
+.gallery-item img:hover { transform: scale(1.06); }
+/* Make Gallery heading match other titles */
+#gallery h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 1800px;
+  color: var(--green);
+}
+
+
+/* Modal */
+.modal { display:none; position:fixed; inset:0; background: rgba(0,0,0,0.82); z-index:1600; align-items:center; justify-content:center; padding:18px; }
+.modal-inner { max-width:1100px; width:100%; text-align:center; position:relative; }
+.modal img { max-width:95%; border-radius:8px; display:block; margin:0 auto; }
+.modal-close { position:absolute; top:-8px; right:6px; background:none; border:0; font-size:32px; color:var(--gold); cursor:pointer; }
+
+/* ============================
+   FOOTER
+   ============================ */
+.site-footer { background: linear-gradient(180deg,var(--green), #3f7d6c); color: #fff; padding:28px 20px; text-align:center; }
+.site-footer a { color: var(--gold); text-decoration:none; }
+#backToTop { margin-top:12px; background:var(--gold); color:var(--green); border-radius:6px; padding:8px 12px; border:0; cursor:pointer; }
+
+/* ============================
+   REVEAL ANIMATION
+   ============================ */
+.reveal { opacity:0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity:1; transform: translateY(0); }
+
+/* ============================
+   RESPONSIVE RULES
+   ============================ */
+@media (max-width: 980px) {
+  .content-section { gap:36px; padding:56px 0; }
+  .hero-title { font-size:2.2rem; }
+}
+
+@media (max-width: 768px) {
+  /* NAV: hide desktop links, show hamburger */
+  .nav-links { display:none; }
+  .hamburger { display:inline-block; }
+
+  /* when mobile nav open, JS adds .open to nav-menu */
+  #navMenu.open .nav-links {
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    right:18px;
+    top:62px;
+    background:var(--white);
+    padding:12px;
+    gap:10px;
+    border-radius:8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  /* stack sections vertically and center */
+  .content-section { grid-template-columns: 1fr; text-align:center; padding:42px 18px; }
+  .content-section .image img { max-width:100%; }
+
+  /* hero smaller height for phones */
+  .hero { height:62vh; background-position:center 25%; }
+  .hero-title { font-size:1.8rem; }
+  .hero-lead { font-size:.98rem; }
+}
+
+/* small utility */
+.center { text-align:center; }
+.hidden { display:none !important; }
+
+/* =======================================
+   FIXED BUTTONS: Did You Know + Map Link
+   ======================================= */
+
+/* "Did You Know?" button */
+.fact-toggle {
+  background-color: var(--green);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 18px;
+  margin-top: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.fact-toggle:hover {
+  background-color: var(--gold);
+  color: var(--text);
+  transform: translateY(-3px);
+}
+
+/* Hidden fact text (toggle target) */
+.fact {
+  background-color: rgba(51, 108, 93, 0.14);
+  border-left: 4px solid var(--green);
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-style: italic;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+.hidden {
+  display: none;
+}
+
+/* Map & Email buttons */
+#mapLink.btn {
+  display: inline-block;
+  background-color: var(--gold);
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 5px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+#mapLink.btn:hover {
+  background-color: var(--green);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+#location a[href^="mailto:"] {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: none;
+}
+#location a[href^="mailto:"]:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+/* ==============================
+   CALL TO ACTION (FINAL SECTION)
+   ============================== */
+#cta {
+  background-color: rgba(51, 108, 93, 0.14);
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-gif {
+  width: 200px;
+  max-width: 80%;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.cta-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.cta-subtext {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 25px;
+}
+
+#cta .btn {
+  background-color: var(--green);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+#cta .btn:hover {
+  background-color: var(--gold);
+  color: var(--text);
+  transform: translateY(-3px);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .cta-text {
+    font-size: 1.6rem;
+  }
+  .cta-subtext {
+    font-size: 0.95rem;
+  }
+  .cta-gif {
+    width: 150px;
+  }
+}
+
